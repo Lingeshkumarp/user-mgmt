@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import AddUser from './components/AddUser';
+import React, { useState } from "react";
+import { Trash2, Edit } from "lucide-react";
 
 function App() {
+ const [users, setUsers] = useState([]);
+
+  const handleAddUser = (user) => {
+    setUsers([...users, { id: Date.now(), ...user }]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h2 className="text-2xl font-bold text-center mb-6">User Management</h2>
+
+      {/* Add User Component */}
+      <AddUser onAddUser={handleAddUser} />
+
+      {/* User List */}
+      <ul className="user-list">
+        {users.map((user) => (
+          <li key={user.id} className="user-card">
+            <div>
+              <p className="user-name">{user.name}</p>
+              <p className="user-email">{user.email}</p>
+            </div>
+            <div className="user-actions">
+              <button className="edit">
+                <Edit size={16} />
+              </button>
+              <button className="delete">
+                <Trash2 size={16} />
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

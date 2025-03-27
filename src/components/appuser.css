@@ -1,0 +1,48 @@
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .input-box {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .blue-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .blue-button:hover {
+    background-color: darkblue;
+  }
+  
+  .user-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .user-email {
+    color: gray;
+    display: block;
+  }
+  
